@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aluno | Sistema de Provas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="aluno.css">
+</head>
+<body>
+
+    <nav>
+        <h1>ALUNO</h1>
+        <div class="nav-links">
+            <span class="active">Home</span>
+            <span>Avaliações</span>
+            <span>Recuperação</span>
+            <span>Desempenho</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h2 id="hero-title">Explore seu Conhecimento.</h2>
+            <p>
+                Bem-vindo ao seu portal de estudos. Prepare-se para os desafios acadêmicos com o nosso novo sistema interativo de simulados.
+            </p>
+            <button class="btn-main" onclick="abrirProva()">Ver Provas Disponíveis</button>
+        </div>
+    </header>
+
+    <main class="content-area">
+        
+        <section class="section-row">
+            <div class="row-title">Explorar Categorias</div>
+            <div class="carousel">
+                <div class="card" onclick="abrirProva()">
+                    <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?q=80&w=400" alt="Mat">
+                    <div class="card-title">Ciências Exatas</div>
+                </div>
+                <div class="card" onclick="abrirProva()">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400" alt="Bio">
+                    <div class="card-title">Ciências Biológicas</div>
+                </div>
+                <div class="card" onclick="abrirProva()">
+                    <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?q=80&w=400" alt="Humanas">
+                    <div class="card-title">Ciências Humanas</div>
+                </div>
+                <div class="card" onclick="abrirProva()">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=400" alt="Tech">
+                    <div class="card-title">Tecnologia</div>
+                </div>
+                <div class="card" onclick="abrirProva()">
+                    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=400" alt="Art">
+                    <div class="card-title">Artes e Cultura</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-row">
+            <div class="row-title">
+                <span class="dot-alert">●</span> Área de Recuperação
+            </div>
+           
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="quiz-view">
+        <span class="close-btn" onclick="fecharProva()">&times;</span>
+        <div class="quiz-box">
+            <h4 class="q-sub">Sistema de Avaliação</h4>
+            <h1 class="q-main">Carregando Prova...</h1>
+            <p class="q-desc">Você será redirecionado para o ambiente seguro de avaliação em instantes.</p>
+            <button class="btn-main" onclick="fecharProva()">Voltar ao Início</button>
+        </div>
+    </div>
+
+    <script src="aluno.js"></script>
+</body>
+</html>

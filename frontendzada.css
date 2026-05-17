@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://i.ibb.co/NFRhL44/img.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 2.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.input-box {
+    position: relative;
+    margin-bottom: 1.8rem;
+}
+
+.input-box i {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.input-box input {
+    width: 100%;
+    height: 55px;
+    padding: 0 18px 0 55px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.input-box input:focus {
+    border-color: #667eea;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.3);
+}
+
+.input-box input:focus + i {
+    color: #667eea;
+}
+
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.forgot-password a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #667eea;
+    text-shadow: 0 0 5px rgba(102, 126, 234, 0.5);
+}
+
+.btn {
+    width: 100%;
+    height: 55px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
