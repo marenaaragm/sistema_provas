@@ -7,7 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; width: 100%;">
+
     <div class="container">
         <div class="header">
             <h1>📚 Nova Prova</h1>
@@ -15,13 +16,26 @@
         </div>
 
         <form id="provaForm">
-            <!-- Matéria -->
+            <!-- MODIFICAÇÃO: Campo substituído por seletores com estilos inline seguros -->
             <div class="form-group">
                 <label>📖 Matéria *</label>
-                <input type="text" id="materiaInput" name="materia" 
-                       placeholder="Digite a matéria..." required>
+                
+                <input type="hidden" id="materiaInput" name="materia" value="">
+                
+                <div class="materia-selector" style="display: flex; gap: 12px; flex-wrap: wrap; margin-top: 8px;">
+                    <button type="button" class="btn-materia" data-materia="Fundamentos de Segurança" style="flex: 1; min-width: 160px; padding: 14px; border: 2px solid #323238; background-color: #29292e; color: #a8a8b3; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;">
+                        🛡️ Fundamentos de Segurança
+                    </button>
+                    <button type="button" class="btn-materia" data-materia="Matemática Discreta" style="flex: 1; min-width: 160px; padding: 14px; border: 2px solid #323238; background-color: #29292e; color: #a8a8b3; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;">
+                        🧮 Matemática Discreta
+                    </button>
+                    <button type="button" class="btn-materia" data-materia="Desenvolvimento de Aplicativos" style="flex: 1; min-width: 160px; padding: 14px; border: 2px solid #323238; background-color: #29292e; color: #a8a8b3; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.2s ease;">
+                        📱 Desenv. de Aplicativos
+                    </button>
+                </div>
             </div>
 
+    
             <!-- Data -->
             <div class="form-group">
                 <label>📅 Data *</label>

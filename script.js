@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Tenta buscar questões do backend
     carregarQuestoes();
+
+    setupMateriaListeners();
 });
 
 async function carregarQuestoes() {
@@ -223,10 +225,49 @@ function salvarProva() {
 
 function limparTudo() {
     if (confirm('Limpar todas as questões?')) {
-        document.getElementById('questoesContainer').innerHTML = '';
-        document.getElementById('provaForm').reset();
+        const container = document.getElementById('questoesContainer');
+        const form = document.getElementById('provaForm');
+        
+        if (container) container.innerHTML = '';
+        if (form) form.reset();
+        
+        // ADICIONE ESTAS LINHAS ABAIXO DENTRO DA SUA FUNÇÃO LIMPAR:
+        document.getElementById('materiaInput').value = '';
+        document.querySelectorAll('.materia-selector .btn-materia').forEach(b => {
+            b.style.backgroundColor = '#29292e';
+            b.style.borderColor = '#323238';
+            b.style.color = '#a8a8b3';
+        });
+        
         contadorQuestao = 0;
-        document.getElementById('data').valueAsDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        const dataInput = document.getElementById('data');
+        if (dataInput) {
+            dataInput.valueAsDate = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+        }
         adicionarQuestao();
     }
-} 
+}
+// NOVA FUNÇÃO: Controla a seleção visual dos botões e alimenta o input oculto
+function setupMateriaListeners() {
+    const botoesMateria = document.querySelectorAll('.materia-selector .btn-materia');
+    const inputMateria = document.getElementById('materiaInput');
+
+    botoesMateria.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Reseta o estilo de todos os botões para o padrão escuro
+            botoesMateria.forEach(b => {
+                b.style.backgroundColor = '#e7e7ed';
+                b.style.borderColor = '#e7e7ee';
+                b.style.color = '#a8a8b3';
+            });
+            
+            // Aplica o realce roxo diretamente via JS no botão que recebeu o clique
+            this.style.backgroundColor = '#8257e5';
+            this.style.borderColor = '#8257e5';
+            this.style.color = '#fff';
+            
+            // Define o valor correspondente no input oculto
+            inputMateria.value = this.dataset.materia;
+        });
+    });
+}
